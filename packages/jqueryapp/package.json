@@ -1,0 +1,16 @@
+{
+    "name": "jqueryapp",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+      "jquery": "^3.5.1",
+      "webpack": "^5.0.0-beta.29",
+      "webpack-cli": "beta"
+    },
+    "scripts": {
+        "build": "webpack"
+    }
+  }
+  
