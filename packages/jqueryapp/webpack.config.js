@@ -24,7 +24,7 @@ module.exports = (mode = 'development') => ({
             library: { type: 'var', name: 'global_jqueryapp' },
             filename: 'jqueryapp-container.js',
             exposes: {
-                './app': './src/app.js'
+                './app-fn': './src/app.js'
             },
             shared: ['jquery'],
         }),

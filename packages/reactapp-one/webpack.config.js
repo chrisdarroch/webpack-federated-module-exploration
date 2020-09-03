@@ -33,7 +33,7 @@ module.exports = (mode = 'development') => ({
         new ModuleFederationPlugin({
             name: 'zereactapp_one',
             exposes: {
-              'default': './src/index.js',
+              '.': './src/index.js',
             },
             library: { type: 'var', name: 'global_reactapp_one' },
             filename: 'reactapp_one-container.js',

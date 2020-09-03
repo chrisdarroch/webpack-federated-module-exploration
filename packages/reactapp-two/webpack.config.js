@@ -33,8 +33,8 @@ module.exports = (mode = 'development') => ({
         new ModuleFederationPlugin({
             name: 'zereactapp_two',
             exposes: {
-              'default': './src/index.js',
-              './Contents': './src/contents.js',
+              '.': './src/index.js',
+              './the-app-contents': './src/contents.js',
             },
             library: { type: 'var', name: 'global_reactapp_two' },
             filename: 'reactapp_two-container.js',

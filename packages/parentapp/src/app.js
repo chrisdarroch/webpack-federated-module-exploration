@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 import AppOne from 'remote-reactapp-one';
-import AppTwo from 'remote-reactapp-two';
-import three from 'remote-jqueryapp';
+import AppTwo from 'remote-reactapp-two/the-app-contents';
+import three from 'remote-jqueryapp/app-fn';
 
 const App = () => {
     useEffect(() => three(), []);
