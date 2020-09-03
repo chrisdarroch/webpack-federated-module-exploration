@@ -10,8 +10,8 @@
         "@babel/preset-react": "^7.10.4",
         "babel-loader": "^8.1.0",
         "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin#master",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
+        "react": "16.9.0",
+        "react-dom": "16.9.0",
         "webpack": "^5.0.0-beta.29",
         "webpack-cli": "beta"
     },

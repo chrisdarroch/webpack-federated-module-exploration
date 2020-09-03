@@ -40,8 +40,8 @@ module.exports = (mode = 'development') => ({
             shared: [
               {
                 // I have to re-express what's in peerDependencies.
-                'react': { singleton: true, requiredVersion: '^16.9' },
-                'react-dom': { singleton: true, requiredVersion: '^16.9' }
+                'react': { singleton: true, requiredVersion: '^16.13' },
+                'react-dom': { singleton: true, requiredVersion: '^16.13' }
               },
             ],
         }),
