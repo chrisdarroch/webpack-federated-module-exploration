@@ -15,6 +15,6 @@
     },
     "scripts": {
         "build": "webpack",
-        "start": "http-server -p 1234 -c-1 dist/"
+        "start": "http-server -p 1234 -c-1 serve/"
     }
 }

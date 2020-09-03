@@ -1,9 +1,17 @@
 const { ModuleFederationPlugin } = require('webpack').container;
+const { resolve, basename } = require('path');
 
 module.exports = (mode = 'development') => ({
     mode,
     entry: 'src/index.js',
     devtool: false,
+    output: {
+        // in a distributed world, it would be up to the consumer of the shared
+        // bundle to specify where it is on what server. here, though,
+        // I'm compiling in to that known place on behalf of the parentapp,
+        // because it's easier than creating a task to sync the dist folders of each app.
+        path: resolve(__dirname, '../parentapp/serve/path-on-server/' + basename(__dirname))
+    },
     module: {
         rules: [
           {
@@ -17,8 +25,9 @@ module.exports = (mode = 'development') => ({
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'the_reactapp_one',
-            filename: 'remote-reactapp-two.js',
+            name: 'zereactapp_one',
+            library: { type: 'var', name: 'global_reactapp_one' },
+            filename: 'reactapp_one-container.js',
             shared: ['react', 'react-dom'],
         }),
     ],
