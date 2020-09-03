@@ -16,4 +16,6 @@ const App = () => {
     )
 };
 
-ReactDOM.render(document.getElementById('root'), <App />);
+ReactDOM.render(<App />, document.getElementById('root'), () => {
+    console.log('everything got rendered! wow!');
+});
