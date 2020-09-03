@@ -3,6 +3,7 @@ const { ModuleFederationPlugin } = require('webpack').container;
 module.exports = (mode = 'development') => ({
     mode,
     entry: 'src/index.js',
+    devtool: false,
     module: {
         rules: [
           {
@@ -17,6 +18,7 @@ module.exports = (mode = 'development') => ({
     plugins: [
         new ModuleFederationPlugin({
             name: 'the_reactapp_one',
+            filename: 'remote-reactapp-one.js',
             shared: ['react', 'react-dom'],
         }),
     ],

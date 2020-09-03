@@ -1,8 +1,11 @@
 const { ModuleFederationPlugin } = require('webpack').container;
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { resolve } = require("path");
 
 module.exports = (mode = 'development') => ({
     mode,
     entry: 'src/index.js',
+    devtool: false,
     module: {
         rules: [
           {
@@ -15,12 +18,15 @@ module.exports = (mode = 'development') => ({
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: "./public/index.html",
+        }),
         new ModuleFederationPlugin({
             name: 'the_parentapp',
             remotes: {
-                'remote-jqueryapp': 'the_jqueryapp',
-                'remote-reactapp-one': 'the_reactapp_one',
-                'remote-reactapp-two': 'the_reactapp_two',
+                'remote-jqueryapp': resolve(__dirname, '../jqueryapp/dist/remote-jqueryapp.js'),
+                'remote-reactapp-one': resolve(__dirname, '../reactapp-one/dist/remote-reactapp-one.js'),
+                'remote-reactapp-two': resolve(__dirname, '../reactapp-two/dist/remote-reactapp-two.js'),
             },
         }),
     ],
