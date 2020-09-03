@@ -39,8 +39,9 @@ module.exports = (mode = 'development') => ({
             filename: 'reactapp_one-container.js',
             shared: [
               {
-                'react': { singleton: true },
-                'react-dom': { singleton: true }
+                // I have to re-express what's in peerDependencies.
+                'react': { singleton: true, requiredVersion: '^16.9' },
+                'react-dom': { singleton: true, requiredVersion: '^16.9' }
               },
             ],
         }),
