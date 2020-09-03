@@ -7,7 +7,7 @@ module.exports = (mode = 'development') => ({
     entry: 'src/index.js',
     devtool: false,
     output: {
-        path: resolve(__dirname, 'serve')
+        path: resolve(__dirname, 'serve'),
     },
     module: {
         rules: [
@@ -36,9 +36,9 @@ module.exports = (mode = 'development') => ({
             //      if running in a browser, this should be a valid URL.
             //      if running in Node / SSR, this should be a filepath.
             remotes: {
-                'remote-jqueryapp': 'zejqueryapp@path-on-server/jqueryapp/jqueryapp-container.js',
-                'remote-reactapp-one': 'zereactapp_one@path-on-server/reactapp-one/reactapp_one-container.js',
-                'remote-reactapp-two': 'zereactapp_two@path-on-server/reactapp-two/reactapp_two-container.js',
+                'remote-jqueryapp': 'global_jqueryapp@path-on-server/jqueryapp/jqueryapp-container.js',
+                'remote-reactapp-one': 'global_reactapp_one@path-on-server/reactapp-one/reactapp_one-container.js',
+                'remote-reactapp-two': 'global_reactapp_two@path-on-server/reactapp-two/reactapp_two-container.js',
             },
             shared: [
                 {
